@@ -1,48 +1,46 @@
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const pages = Array.from({ length: 30 }, (_, index) => {
-    const dayNumber = index + 1; // Days start from 1
-    return { name: `Day ${dayNumber}`, path: `/page${dayNumber}` };
+  const weeks = Array.from({ length: 2 }, (_, index) => {
+    const weekNumber = index + 1;
+    return { name: `Week ${weekNumber}`, path: `/week${weekNumber}` };
   });
 
-  const location = useLocation(); // Get the current route
-  const currentPageIndex = pages.findIndex((page) => page.path === location.pathname);
+  const location = useLocation();
+  const currentWeekIndex = weeks.findIndex((week) => week.path === location.pathname);
 
-  const previousPage = currentPageIndex > 0 ? pages[currentPageIndex - 1] : null;
-  const nextPage = currentPageIndex < pages.length - 1 ? pages[currentPageIndex + 1] : null;
+  const previousWeek = currentWeekIndex > 0 ? weeks[currentWeekIndex - 1] : null;
+  const nextWeek = currentWeekIndex < weeks.length - 1 ? weeks[currentWeekIndex + 1] : null;
 
   return (
     <nav className="flex justify-between items-center px-10 py-5 text-black">
-      {/* Previous Day */}
+
       <div className="min-w-[130px]">
-        {previousPage && (
+        {previousWeek && (
           <Link
-            to={previousPage.path}
+            to={previousWeek.path}
             className="text-white px-2 py-1 rounded-md bg-gray-700 hover:bg-gray-500 active:bg-gray-700"
           >
-            &larr; Previous Day
+            &larr; Previous Week
           </Link>
         )}
       </div>
 
-      {/* Current Day */}
       <div>
-        {currentPageIndex >= 0 ? (
-          <span className="font-bold text-4xl text-green-600">&lt; {pages[currentPageIndex].name} &gt;</span>
+        {currentWeekIndex >= 0 ? (
+          <span className="font-bold text-4xl text-green-600">&lt; {weeks[currentWeekIndex].name} &gt;</span>
         ) : (
-          <span className="text-gray-400">No Day Selected</span>
+          <span className="text-gray-400">No Week Selected</span>
         )}
       </div>
 
-      {/* Next Day */}
       <div className="min-w-[130px]">
-        {nextPage && (
+        {nextWeek && (
           <Link
-            to={nextPage.path}
+            to={nextWeek.path}
             className="text-white px-2 py-1 rounded-md bg-gray-700 hover:bg-gray-500 active:bg-gray-700"
           >
-            Next Day &rarr;
+            Next Week &rarr;
           </Link>
         )}
       </div>

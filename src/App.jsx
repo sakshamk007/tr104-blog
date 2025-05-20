@@ -1,12 +1,12 @@
-import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import './index.css';
+import './App.css';
+import Navbar from "./components/Navbar";
 
-const pages = Array.from({ length: 30 }, (_, i) => {
-  const pageNumber = i + 1;
-  return { path: `/page${pageNumber}`, component: React.lazy(() => import(`./blogs/Page${pageNumber}.jsx`)) };
+const weeks = Array.from({ length: 2 }, (_, i) => {
+  const weekNumber = i + 1;
+  return { path: `/week${weekNumber}`, component: React.lazy(() => import(`./blogs/Week${weekNumber}.jsx`)) };
 });
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Navigate to="/page1" />} /> {/* Redirects "/" to "/page1" */}
-          {pages.map(({ path, component: Component }) => (
+          <Route path="/" element={<Navigate to="/week1" />} />
+          {weeks.map(({ path, component: Component }) => (
             <Route key={path} path={path} element={<React.Suspense fallback={<div>Loading...</div>}><Component /></React.Suspense>} />
           ))}
         </Routes>
