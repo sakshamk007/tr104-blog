@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const weeks = Array.from({ length: 2 }, (_, index) => {
+  const weeks = Array.from({ length: 20 }, (_, index) => {
     const weekNumber = index + 1;
     return { name: `Week ${weekNumber}`, path: `/week${weekNumber}` };
   });

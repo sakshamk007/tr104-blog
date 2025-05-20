@@ -4,7 +4,7 @@ import './index.css';
 import './App.css';
 import Navbar from "./components/Navbar";
 
-const weeks = Array.from({ length: 2 }, (_, i) => {
+const weeks = Array.from({ length: 20 }, (_, i) => {
   const weekNumber = i + 1;
   return { path: `/week${weekNumber}`, component: React.lazy(() => import(`./blogs/Week${weekNumber}.jsx`)) };
 });
