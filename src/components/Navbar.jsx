@@ -28,7 +28,7 @@ const Navbar = () => {
 
       <div>
         {currentWeekIndex >= 0 ? (
-          <span className="font-bold text-4xl text-green-600">&lt; {weeks[currentWeekIndex].name} &gt;</span>
+          <span className="font-bold text-4xl text-yellow-600">&lt; {weeks[currentWeekIndex].name} &gt;</span>
         ) : (
           <span className="text-gray-400">No Week Selected</span>
         )}
