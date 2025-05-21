@@ -68,7 +68,7 @@ const Week7 = () => {
             <li>
               <strong className="text-sky-400">Handling Errors in Fetch</strong>
               <p className="text-gray-300">
-                Fetch doesn’t reject on HTTP errors. You need to check the{" "}
+                Fetch doesn't reject on HTTP errors. You need to check the{" "}
                 <code>response.ok</code> property manually and throw an error to
                 handle 404 or 500 status codes properly in your logic.
               </p>
@@ -104,7 +104,7 @@ const Week7 = () => {
               <p className="text-gray-300">
                 The <code>constructor</code> method is a special function inside
                 a class that gets called when a new object is created. It
-                initializes the object’s properties and prepares it for use.
+                initializes the object's properties and prepares it for use.
               </p>
             </li>
             <li>
@@ -198,7 +198,7 @@ const Week7 = () => {
               <strong className="text-sky-400">Mark-and-Sweep Algorithm</strong>
               <p className="text-gray-300">
                 The mark-and-sweep algorithm identifies reachable objects by
-                marking them, then sweeping unmarked ones away. It’s widely used
+                marking them, then sweeping unmarked ones away. It's widely used
                 in JavaScript engines like V8 to manage memory efficiently.
               </p>
             </li>

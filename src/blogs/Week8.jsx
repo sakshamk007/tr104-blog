@@ -186,7 +186,7 @@ const Week8 = () => {
               <strong className="text-sky-400">Understanding Generics</strong>
               <p className="text-gray-300">
                 Generics allow creating reusable components that work with any
-                data type while preserving type safety. They’re often used in
+                data type while preserving type safety. They're often used in
                 functions, classes, and collections to improve flexibility.
               </p>
             </li>
